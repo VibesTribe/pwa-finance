@@ -1,0 +1,211 @@
+You are an expert full-stack developer specializing in React, Firebase, and Progressive Web App development. You will generate code snippets based on detailed specifications.
+
+The goal is to build a simple, intuitive, and user-friendly personal finance app that helps users track their income, expenses, split payments, and debts. We are currently focused on building the Minimum Viable Product (MVP) to validate the core concept.
+
+**Existing Context and Requirements (Please Read Carefully Before Generating Any Code):**
+
+*   **Previous Discussions and Features:**
+Core Purpose:
+
+The app aims to be a user-centric, privacy-focused, and simple-to-use personal finance companion. It's designed to help users track their income, expenses, and shared expenses without the complexity of spreadsheets or manual data entry. The target audience includes individuals who find traditional budgeting tools overwhelming, like farmers managing business/personal finances and individuals who struggle with overspending.
+
+Key Functionality:
+
+Income and Expense Tracking:
+
+Manual Data Entry: Users can manually input income and expense transactions.
+
+Receipt Upload: Users can upload photos of receipts from their camera or gallery.
+
+Voice/Text Notes: Users can add voice or text notes to transactions for context.
+
+Categorization:
+
+Users can assign categories to transactions (e.g., groceries, rent, business supplies).
+
+The app provides predefined categories, and users can create custom tags.
+
+Percentage split
+
+Data Visualization: The app provides charts and graphs to visualize income and expenses (pie charts for spending by category, bar graphs for income vs. expenses over time).
+
+Split Payments and Shared Expenses:
+
+Split Tracking: Users can track shared expenses with friends, family, or business partners.
+
+Debt Tracking: The app tracks who owes what and allows users to send reminders.
+
+Payment Methods: The app should allow a variety of methods for payment, such as cash and credit.
+
+Reports: The app should make a report of past payments and expenses.
+
+Add Note to Shared Payments: The app should allow notes to be added to split payments.
+
+Automated Savings:
+
+The app must provide easy and automated tools to help users track their spending.
+
+The app should be able to make recommendations based on prior performance.
+
+Al Features (Premium Tier):
+
+OCR (Optical Character Recognition): Automatically extract data from receipts (vendor, amount, date, line items).
+
+Smart Suggestions: Provide Al-powered suggestions for categorizing transactions and splitting expenses.
+
+Budget balancing: Budget balancing allows users to set parameters to be reminded of when the spent and need to budget better.
+
+Auto-Reminders: Automatically send reminders to those who owe money.
+
+Line by Line Detail: Pull the cost of every item from one payment in the report, rather than just the entire total (a report shows a summary of each transaction).
+
+Asset Tracking (Pro):
+
+The user may want to upload documents like bank statements, bank info, paychecks, receipts, screenshots and invoice.
+
+The app must be able to automatically import data from documents.
+
+Track and manage assets (e.g., equipment, furniture).
+
+Reports and Tax Preparation:
+
+Generate reports for tax purposes (business vs. personal expenses).
+
+Export data in PDF or CSV format.
+
+Reports should be customizable by date, category, and tax type.
+
+Generate resale tax reports (capital gains/losses).
+
+Track equipment depreciation.
+
+User Authentication and Security:
+
+Secure user accounts.
+
+End-to-end encryption for all data (receipts, notes, personal information).
+
+Full control for users to download their data and delete their accounts (GDPR compliance).
+
+Implement security measures for financial data and access.
+
+Generate shareable debt summary with custom note.
+
+PWA Features:
+
+Cross-platform compatibility (installable on Android, iOS, and desktop).
+
+Offline support (ability to add transactions and view data offline).
+
+Pricing Model:
+
+Free Tier: Limited features (manual data entry, basic split payments, limited reporting).
+
+Premium Tier: Advanced features (Al-powered OCR and suggestions, unlimited splits, advanced reports, cloud storage sync).
+
+"Buy Me a Coffee": a 100 percent optional "donation to support the app."
+
+User-Driven Design:
+
+Non-judgemental
+
+The app cannot give unsolicited spending advice or tell the user where to save money.
+
+The app must give options for expenses, but may not assume anything about any payment.
+
+Easy user-access and functionability, with simple commands.
+
+Core Focus Areas (According to User Priorities):
+
+Simplicity: The app should be easy to use and understand, even for non-technical users.
+
+User Control: Users should have control over their data and the app's functionality.
+
+Accuracy: The app should provide accurate data and insights.
+
+Visual clarity: Charts and reports.
+
+In essence, the app aims to empower users to take control of their finances in a simple, secure, and personalized way. It focuses on automation and intelligent suggestions, but always prioritizes user control and privacy.
+    *   The app must be a Progressive Web App (PWA) for cross-platform compatibility (installable on Android, iOS, and desktop).
+    *   The app uses a freemium model with a free "Starter" tier and a paid "Pro" tier.
+    *   The primary UI should be user-driven, and judgement-free.
+    *   End to end encryption for user privacy.
+    *   All test users have complete rights to full data download and account deletion.
+    *   A detailed MVP Checklist exists that the test users should pass.
+
+*   **Core Technologies:**
+    *   Frontend: React (using `create-react-app` or Vite), Material-UI (or similar component library) for styling, Workbox for PWA features.
+    *   Backend: Firebase (Authentication, Firestore, Storage).
+    *   For the MVP, image analysis with image -> text conversion is NOT used (no OCR needed yet).
+
+*   **Data Models (Firestore Schema):** (Paste your data models from previous response here, formatted as JavaScript objects representing Firestore documents)
+    ```javascript
+    // Example (replace with your actual models):
+    const userSchema = {
+      uid: "string",
+      name: "string",
+      email: "string",
+      accountType: "string",
+      // ... other user fields
+    };
+
+    const receiptSchema = {
+      receiptId: "string",
+      date: "2024-02-26",
+      vendor: "Starbucks",
+      amount: 5.50,
+      // ... other receipt fields
+    };
+
+    // ... other schema definitions
+    ```
+
+*   **Components and Structure:**
+    *   (Outline the React component structure, highlighting the main components and their responsibilities. For example:)
+        *   `Dashboard`: Main dashboard displaying income, expenses, split summaries.
+        *   `ReceiptUpload`: Component for handling receipt upload (camera and gallery).
+        *   `ExpenseForm`: Component for manual expense entry.
+        *   `SplitExpense`: Component for creating and managing split expenses.
+        *   `Navigation`: Handles app navigation between Dashboard, Profile, and other screens.
+
+*   **Coding Style and Conventions:**
+    *   Use functional components and hooks in React.
+    *   Follow Airbnb JavaScript Style Guide.
+    *   Use descriptive variable and function names.
+    *   Write modular, reusable components.
+
+*   **Error Handling:**
+    *   Implement error handling for Firebase API calls (authentication, data fetching, storage).
+    *   Display user-friendly error messages.
+    *   Log errors for debugging (using `console.error` initially).
+
+**Detailed Task Specification:**
+
+Based on the existing context, please generate React code for the following component: **(Choose ONE specific component for this prompt to keep it focused. For example, 'ReceiptUpload' or 'ExpenseForm')**
+
+**For example: If ReceiptUpload is your component**
+You will generate a new component, `ReceiptUpload.jsx`, in the `src/components` folder that performs the following:
+
+*   **Functionality:** Allows users to upload a receipt image from their camera or gallery.
+*   **UI:** Use Material-UI components for a clean and intuitive interface. Include:
+    *   Two buttons: "Take Photo" and "Choose from Gallery".
+    *   Display a preview of the selected image.
+    *   If the user chooses "Take Photo" or "Choose from Gallery," and cancels without uploading, set the app to return to the camera or gallery section.
+
+*   **State Management:**
+    *   Use the `useState` hook to manage the selected image file.
+
+*   **Firebase Integration:**
+    *   Upon successful image selection, upload the image to Firebase Storage (create a folder structure `users/{userId}/receipts`).
+    *   Generate a unique filename for the image.
+    *   After successful upload, store the Storage URL to the database.
+
+*   **Error Handling:**
+    *   Display an error message if the upload fails.
+
+*   **Accessibility:**
+    *   Add appropriate ARIA attributes for accessibility.
+
+**Output:**
+
+Return only the code for the `ReceiptUpload.jsx` component. Do not include any surrounding comments or explanations. Include all necessary import statements. Make sure the code runs and is complete.
