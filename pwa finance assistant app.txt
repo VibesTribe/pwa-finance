@@ -1,0 +1,96 @@
+Core Purpose: A simple, intuitive PWA to help users manage income, expenses, split payments, and debts, offering control and avoiding complexity.
+
+Target Users: Individuals or small business owners looking for a financial tracker that is easy to use.
+
+Key Features:
+
+Dashboard:
+
+Categorization of accounts: Allows users to indicate whether they are using the app for personal, business, or a combination of both.
+
+Business/Personal Tabs: Dedicated dashboards for each, ensuring focused overviews.
+
+Income & Expense Visualizations: Pie charts, bar graphs.
+
+Expense Tracking:
+
+Manual Entry: For quick input.
+
+Receipt Uploads (camera/gallery): For later Al integration. (note that the method of ocr or vision ai for receipts etc should be done in such a way as it can be easily changed (eg new llm with vision becomes free or open source version is released or better model becomes available).  This applies to both the vision for receipts and the ai budet/savings suggestion assistant ai which might be a different llm than the vision one for receipts.  Keep it easily ugradeable with little to no downdime at all.
+
+Voice/Text Notes: To add context to transactions.
+
+Split Payments:
+
+Track shared expenses and who owes what.
+
+Reminders: Send payment nudges.
+
+Add notes to all shared payments.
+Ability to easily mark shared payments as paid or pending and have that automatically updated in all dashboard analytics.
+
+Reporting:
+
+Customizable Reports: Filter by date, category, tax type.
+
+Downloads: Export in PDF or CSV format.
+
+Weekly/Monthly Summaries: Push notification when ready (add or generate).
+
+Data Control:
+
+GDPR Compliance: Full data download and account deletion.
+
+Al (Premium):
+
+OCR: Auto-extract data from receipts (future).
+
+Smart Categorization: Al-powered suggestions.
+
+Debt Impact Analysis: Show how debt impacts finances (future).
+
+Budget Balancing: The app must provide tools for users to balance their budget and provide tools for spending reminders.
+
+Auto Savings: The app must provide easy and automated tools to help users track their spending, and make recommendations based on prior performance.
+
+Asset Management (Pro):
+
+Upload, track and manage assets (e.g., equipment, furniture, bank statements, paychecks, screenshots and invoices).
+
+Notifications:
+
+Budget alerts (low/over budget). (opt in)
+
+Reminder to pay shared expenses. (opt in)
+
+Weekly/Monthly report availability.
+
+Other Features:
+
+Voice and text notes can be added to all transactions and shared expenses.
+
+Users can add categories when uploading or in the dashboard.
+
+All categories and suggested categories are based on previous input.
+
+Users can easily search for information in the search.
+
+Core Principles:
+
+Simplicity and ease of use.
+
+User control over data and functionality.
+
+Tax-ready reports and organization.
+
+Budget balancing, and auto savings.
+
+All suggestions and expense settings should be based on user data without suggesting expenses,
+
+No forced spending advice or judgements.
+
+Tiers:
+
+Free Tier: Limited features (basic splits, manual entry).
+
+Premium: Full access to Al, unlimited, third party integrations (future).
